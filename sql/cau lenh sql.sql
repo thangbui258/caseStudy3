@@ -37,7 +37,7 @@ create table KetQua (
  insert into UserLogin (Name,Email,Pass,Roll) values ('thang', 'thang@gmail.com',123,'member');
 
  insert into DanhSachHS (Name,Email,Phone) values ('Nam', 'nam@gmail.com',1234567890);
- insert into DanhSachHS (Name,Email,Phone) values ('Minh', 'Minh@gmail.com',1234567890);
+ insert into DanhSachHS (Name,Email,Phone) values ('Tai', 'Tai@gmail.com',1234567890);
  
  insert into Subject (Subject) values ('Toan');
  insert into Subject (Subject) values ('Van');
@@ -52,3 +52,27 @@ CREATE PROCEDURE delete_list_student (IN id INT)
 delimiter ; 
 CALL delete_list_student(2);
 
+delimiter //
+CREATE PROCEDURE update_Score (scoreT INT,
+								scoreV INT,
+                                scoreA INT,
+                                id INT
+)
+  BEGIN
+    update KetQua set Score = scoreT where ID_HS = id && ID_subject = 1; 
+    update KetQua set Score = scoreV where ID_HS = id && ID_subject = 2; 
+    update KetQua set Score = scoreA where ID_HS = id && ID_subject = 3; 
+  END//
+delimiter ;
+
+call update_Score ('1',1,1,5);
+
+select DanhSachHS.ID_HS, DanhSachHS.Name, Subject.Subject, KetQua.Score
+from KetQua
+inner join DanhSachHS on KetQua.ID_HS = DanhSachHS.ID_HS
+inner join Subject on KetQua.ID_subject = Subject.ID_subject;
+
+select DanhSachHS.Name, KetQua.ID_HS, KetQua.Score
+                        from KetQua
+                        inner join DanhSachHS on KetQua.ID_HS = DanhSachHS.ID_HS 
+                        where KetQua.ID_HS = 5;

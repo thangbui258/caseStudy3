@@ -14,7 +14,7 @@ const mimeTypes = {
     "js": "text/javascript",
     "css": "text/css",
     "png": "image/png",
-    "svg":"image/svg+xml"
+    "svg": "image/svg+xml"
 };
 
 
@@ -28,7 +28,7 @@ let serverHttp = http.createServer((req, res) => {
     if (filesDefences) {
         const extension = mimeTypes[filesDefences[0].toString().split('.')[1]];
         res.writeHead(200, {'Content-Type': extension});
-        fs.createReadStream(__dirname  + req.url).pipe(res)
+        fs.createReadStream(__dirname + req.url).pipe(res)
     } else {
         let trimPath = path.replace(/^\/+|\/+$/g, '');
         let chosenHandler = (typeof (router[trimPath]) !== 'undefined') ? router[trimPath] : handlers.notfound;
@@ -50,18 +50,33 @@ handlers.trangchuAdmin = function (req, res) {
 handlers.trangchuMember = function (req, res) {
     userController.showPageTrangchuMember(req, res)
 };
-handlers.logout = function (req,res){
-    userController.outLogin(req,res)
+handlers.logout = function (req, res) {
+    userController.outLogin(req, res)
 }
-
-
+handlers.addstudent = function (req, res) {
+    userController.insertStudent(req, res)
+}
+handlers.addScore = function (req, res) {
+    userController.addScores(req, res)
+}
+handlers.deleteStudent = function (req, res) {
+    userController.deleteListStudent(req, res)
+}
+handlers.listGeneral = function (req,res){
+    userController.listGeneral(req,res)
+}
+handlers.editScore = function (req,res){
+    userController.editScore(req,res)
+}
 let router = {
     'login': handlers.login,
     'trangchuAdmin': handlers.trangchuAdmin,
     'trangchuMember': handlers.trangchuMember,
-    'notfound':handlers.notfound,
-    'logout':handlers.logout
+    'notfound': handlers.notfound,
+    'logout': handlers.logout,
+    'addstudent': handlers.addstudent,
+    'addScore': handlers.addScore,
+    'deleteliststudent': handlers.deleteStudent,
+    'listGeneral': handlers.listGeneral,
+    'editScore': handlers.editScore
 }
-
-//1. khong doc dc css,js cua file html trang chu
-//2, lay dc ten file session

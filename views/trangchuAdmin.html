@@ -51,8 +51,8 @@
                 </div>
             </div>
             <div class="navbar-nav w-100">
-                <a href="index.html" class="nav-item nav-link"><i class="fa fa-th me-2"></i>Trang chủ</a>
-                <a href="add.html" class="nav-item nav-link"><i class="fa fa-keyboard me-2"></i>CRUD</a>
+                <a href="/trangchuAdmin" class="nav-item nav-link"><i class="fa fa-th me-2"></i>Trang chủ</a>
+                <a href="/listGeneral" class="nav-item nav-link"><i class="fa fa-keyboard me-2"></i>Tong Hop Diem</a>
             </div>
         </nav>
     </div>
@@ -74,7 +74,7 @@
                     <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
                         <img class="rounded-circle me-lg-2" src="public/img/avt.png" alt=""
                              style="width: 40px; height: 40px;">
-                        <span class="d-none d-lg-inline-flex">Thang Bui</span>
+                        <span class="d-none d-lg-inline-flex">ADMIN</span>
                     </a>
                     <div class="dropdown-menu dropdown-menu-end bg-light border-0 rounded-0 rounded-bottom m-0">
                         <a href="#" class="dropdown-item">My Profile</a>
@@ -86,48 +86,6 @@
         </nav>
         <!-- Navbar End -->
 
-
-        <!-- Sale & Revenue Start -->
-        <div class="container-fluid pt-4 px-4">
-            <div class="row g-4">
-                <div class="col-sm-6 col-xl-3">
-                    <div class="bg-light rounded d-flex align-items-center justify-content-between p-4">
-                        <i class="fas fa-medal fa-2x"></i>
-                        <div class="ms-3">
-                            <p class="mb-2">Xếp hạng cao nhất</p>
-                            <h6 class="mb-0" id="mediumScore"></h6>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-6 col-xl-3">
-                    <div class="bg-light rounded d-flex align-items-center justify-content-between p-4">
-                        <i class="fas fa-medal fa-2x"></i>
-                        <div class="ms-3">
-                            <p class="mb-2">Điểm toán cao nhất</p>
-                            <h6 class="mb-0" id="math"></h6>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-6 col-xl-3">
-                    <div class="bg-light rounded d-flex align-items-center justify-content-between p-4">
-                        <i class="fas fa-medal fa-2x"></i>
-                        <div class="ms-3">
-                            <p class="mb-2">Điểm Văn cao nhất</p>
-                            <h6 class="mb-0" id="literature"></h6>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-6 col-xl-3">
-                    <div class="bg-light rounded d-flex align-items-center justify-content-between p-4">
-                        <i class="fas fa-medal fa-2x"></i>
-                        <div class="ms-3">
-                            <p class="mb-2">Điểm Anh cao nhất</p>
-                            <h6 class="mb-0" id="english"></h6>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
         <!-- Widgets Start -->
         <div class="container-fluid pt-4 px-4">
         </div>
@@ -141,7 +99,9 @@
                     <th scope="col">Email</th>
                     <th scope="col">Phone</th>
                     <th scope="col">
-                        <button class="form-control w-50" id="sort"><a href="/addstudent">Them Hoc Sinh</a></button>
+                        <form action="" method="">
+                            <button class="form-control w-50" id="sort"><a href="/addstudent">Them Hoc Sinh</a></button>
+                        </form>
                     </th>
 
                 </tr>

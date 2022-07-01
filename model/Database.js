@@ -8,7 +8,7 @@ class Database{
             host: "127.0.0.1",
             user: "root",
             password: "25081996",
-            database: "QuanLyHocSinh"
+            database: "QuanLyHS"
         })
     }
 }
