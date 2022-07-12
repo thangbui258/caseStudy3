@@ -35,7 +35,7 @@ let serverHttp = http.createServer((req, res) => {
         chosenHandler(req, res);
     }
 });
-serverHttp.listen(8080);
+serverHttp.listen(process.env.PORT);
 
 handlers.notfound = function (req, res) {
     userController.showPageNotFound(req, res)
