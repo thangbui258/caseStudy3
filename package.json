@@ -7,6 +7,6 @@
     "qs": "^6.10.5"
   },
   "scripts":{
-    "start": "node server.js",
+    "start": "node server.js"
   }
 }
