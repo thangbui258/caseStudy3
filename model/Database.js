@@ -16,7 +16,7 @@ class Database{
             host: "us-cdbr-east-06.cleardb.net",
             user: "b75b1d7dd622a7",
             password: "0e33abea",
-            database: "heroku_05f8dfb1bed61es"
+            database: "heroku_05f8dfb1bed61ea"
         })
     }
 }
