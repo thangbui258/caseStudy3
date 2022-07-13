@@ -214,7 +214,7 @@ class UserController {
                 let Data = qs.parse(data);
                 this.userModel.insertDBdanhSachHS(Data.name, Data.email, Data.phone)
                     .then(() => {
-                        res.writeHead(301, {Location: '/trangchuAdmin'})
+                        res.writeHead(301, {Location: 'http://localhost:8080/trangchuAdmin'})
                         res.end();
                     })
                     .catch(err => {
@@ -253,7 +253,7 @@ class UserController {
                 let Data = qs.parse(data);
                 this.userModel.insertDBketQua(id, Data.toan, Data.van, Data.anh)
                     .then(() => {
-                        res.writeHead(301, {Location: '/trangchuAdmin'})
+                        res.writeHead(301, {Location: 'http://localhost:8080/trangchuAdmin'})
                         res.end();
                     })
             })
@@ -285,7 +285,7 @@ class UserController {
                 let Data = qs.parse(data);
                 this.userModel.editDBketQua(Data.toan, Data.van, Data.anh, id)
                     .then(result => {
-                        res.writeHead(301, {Location: '/listGeneral'})
+                        res.writeHead(301, {Location: 'http://localhost:8080/listGeneral'})
                         res.end();
                     })
             })
