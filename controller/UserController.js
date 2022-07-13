@@ -214,7 +214,7 @@ class UserController {
                 let Data = qs.parse(data);
                 this.userModel.insertDBdanhSachHS(Data.name, Data.email, Data.phone)
                     .then(() => {
-                        res.writeHead(301, {Location: 'http://localhost:8080/trangchuAdmin'})
+                        res.writeHead(301, {Location: '/trangchuAdmin'})
                         res.end();
                     })
                     .catch(err => {
