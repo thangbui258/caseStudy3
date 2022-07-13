@@ -143,13 +143,15 @@ class UserController {
                             }
                         })
                     } else {
-                        this.showPage(req, res, './views/login.html')
+                        res.writeHead(301, {Location: '/login'})
+                        res.end();
                     }
                 });
 
             } else {
 
-                this.showPage(req, res, './views/login.html')
+                res.writeHead(301, {Location: '/login'})
+                res.end();
             }
         })
     };
