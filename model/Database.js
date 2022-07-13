@@ -12,7 +12,7 @@ class Database{
     //     })
     // }
     connect(){
-        return mysql.createPool({
+        return mysql.createConnection({
             host: "us-cdbr-east-06.cleardb.net",
             user: "b75b1d7dd622a7",
             password: "0e33abea",
