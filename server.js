@@ -69,7 +69,7 @@ handlers.editScore = function (req,res){
     userController.editScore(req,res)
 }
 let router = {
-    '/': handlers.login,
+    'login': handlers.login,
     'trangchuAdmin': handlers.trangchuAdmin,
     'trangchuMember': handlers.trangchuMember,
     'notfound': handlers.notfound,
